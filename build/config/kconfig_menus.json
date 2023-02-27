@@ -22023,6 +22023,27 @@
                 "id": "component-config-supplicant",
                 "title": "Supplicant",
                 "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "BRIGHTNESS_TICKS",
+                        "name": "BRIGHTNESS_TICKS",
+                        "range": [
+                            1,
+                            50
+                        ],
+                        "title": "One brightness change for ticks",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-led-indicator",
+                "title": "LED Indicator",
+                "type": "menu"
             }
         ],
         "depends_on": null,

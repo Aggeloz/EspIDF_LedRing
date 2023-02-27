@@ -60,4 +60,6 @@
 /home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/ulp/libulp.a
 /home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/usb/libusb.a
 /home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+/home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/espressif__led_indicator/libespressif__led_indicator.a
+/home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
 /home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/main/libmain.a

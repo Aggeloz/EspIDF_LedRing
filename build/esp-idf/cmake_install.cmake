@@ -399,6 +399,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/espressif__cmake_utilities/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/espressif__led_indicator/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/espressif__led_strip/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/main/cmake_install.cmake")
 endif()
 
