@@ -1,6 +1,11 @@
 # EspIDF_LedRing
 Testing Out an RGB LED ring.
 
+# Espressif chip
+  - ESP32S2 
+# Dev Board
+  - Wemos ESP32 S2 Mini
+
 ### Dependencies
   - espressif/led_strip: "^2.3.0"
   - espressif/led_indicator: "^0.3.0"
