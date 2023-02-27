@@ -63,7 +63,7 @@ void app_main(void)
 
 
         // Breathing animation
-        for (i = 1; i < 26; i++)
+        for (i = 1; i < 10; i++)
         {
             ESP_LOGI(TAG, "Up %d", i);
             led_strip_refresh(led_strip);
@@ -76,7 +76,7 @@ void app_main(void)
     
             vTaskDelay(50 / portTICK_PERIOD_MS);
         }
-        for (i = 25; i > 0; i--)
+        for (i = 9; i > 0; i--)
         {
             ESP_LOGI(TAG, "Down %d", i);
             led_strip_refresh(led_strip);
