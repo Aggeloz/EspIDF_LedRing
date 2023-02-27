@@ -1,0 +1,94 @@
+[1/5] cd /home/edgie/eclipse-workspace/usb_hid_test/build/esp-idf/esptool_py && /home/edgie/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/edgie/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/edgie/eclipse-workspace/usb_hid_test/build/partition_table/partition-table.bin /home/edgie/eclipse-workspace/usb_hid_test/build/usb_hid_test.bin
+usb_hid_test.bin binary size 0x2b860 bytes. Smallest app partition is 0x100000 bytes. 0xd47a0 bytes (83%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/edgie/eclipse-workspace/usb_hid_test/build/bootloader/esp-idf/esptool_py && /home/edgie/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/edgie/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/edgie/eclipse-workspace/usb_hid_test/build/bootloader/bootloader.bin
+Bootloader binary size 0x5450 bytes. 0x1bb0 bytes (25%) free.
+[2/3] cd /home/edgie/esp/esp-idf/components/esptool_py && /home/edgie/.espressif/tools/cmake/3.24.0/bin/cmake -D IDF_PATH=/home/edgie/esp/esp-idf -D "SERIAL_TOOL=/home/edgie/.espressif/python_env/idf5.1_py3.10_env/bin/python;;/home/edgie/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s2" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/edgie/eclipse-workspace/usb_hid_test/build -P /home/edgie/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool esp32s2 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 usb_hid_test.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.5
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-S2FNR2 (revision v0.0)
+Features: WiFi, Embedded Flash 4MB, Embedded PSRAM 2MB, ADC and temperature sensor calibration in BLK2 of efuse V2
+Crystal is 40MHz
+MAC: 48:27:e2:46:46:70
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00006fff...
+Flash will be erased from 0x00010000 to 0x0003bfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 21584 bytes to 13617...
+Writing at 0x00001000... (14 %)
+Writing at 0x000024f8... (28 %)
+Writing at 0x00003126... (42 %)
+Writing at 0x00003caf... (57 %)
+Writing at 0x0000473e... (71 %)
+Writing at 0x0000510b... (85 %)
+Writing at 0x00005c83... (100 %)
+Wrote 21584 bytes (13617 compressed) at 0x00001000 in 0.3 seconds (effective 553.9 kbit/s)...
+Hash of data verified.
+Compressed 178272 bytes to 94073...
+Writing at 0x00010000... (2 %)
+Writing at 0x00011186... (4 %)
+Writing at 0x000128cb... (6 %)
+Writing at 0x00013fb3... (8 %)
+Writing at 0x00015822... (10 %)
+Writing at 0x000171b5... (13 %)
+Writing at 0x00018a90... (15 %)
+Writing at 0x0001a5d3... (17 %)
+Writing at 0x0001b101... (19 %)
+Writing at 0x0001bade... (21 %)
+Writing at 0x0001c75a... (23 %)
+Writing at 0x0001d0d2... (26 %)
+Writing at 0x0001dc52... (28 %)
+Writing at 0x0001e8f1... (30 %)
+Writing at 0x0001f3a1... (32 %)
+Writing at 0x0001fe95... (34 %)
+Writing at 0x00020afa... (36 %)
+Writing at 0x0002160c... (39 %)
+Writing at 0x000220cb... (41 %)
+Writing at 0x00022a93... (43 %)
+Writing at 0x000235d0... (45 %)
+Writing at 0x00024083... (47 %)
+Writing at 0x00024d5e... (50 %)
+Writing at 0x000258ef... (52 %)
+Writing at 0x0002644e... (54 %)
+Writing at 0x00026edf... (56 %)
+Writing at 0x0002797d... (58 %)
+Writing at 0x000283a1... (60 %)
+Writing at 0x00028e8f... (63 %)
+Writing at 0x00029ea4... (65 %)
+Writing at 0x0002b16c... (67 %)
+Writing at 0x0002ca8a... (69 %)
+Writing at 0x0002efd3... (71 %)
+Writing at 0x0002f9ff... (73 %)
+Writing at 0x000303e6... (76 %)
+Writing at 0x000311f0... (78 %)
+Writing at 0x0003290a... (80 %)
+Writing at 0x00033c8a... (82 %)
+Writing at 0x0003578b... (84 %)
+Writing at 0x00036382... (86 %)
+Writing at 0x00036d1d... (89 %)
+Writing at 0x0003788b... (91 %)
+Writing at 0x00038859... (93 %)
+Writing at 0x000395a9... (95 %)
+Writing at 0x00039fc5... (97 %)
+Writing at 0x0003ab14... (100 %)
+Wrote 178272 bytes (94073 compressed) at 0x00010000 in 1.6 seconds (effective 913.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 495.2 kbit/s)...
+Hash of data verified.
+
+Leaving...
+WARNING: ESP32-S2FNR2 (revision v0.0) chip was placed into download mode using GPIO0.
+esptool.py can not exit the download mode over USB. To run the app, reset the chip manually.
+To suppress this note, set --after option to 'no_reset'.
+FAILED: CMakeFiles/flash /home/edgie/eclipse-workspace/usb_hid_test/build/CMakeFiles/flash 
+cd /home/edgie/esp/esp-idf/components/esptool_py && /home/edgie/.espressif/tools/cmake/3.24.0/bin/cmake -D IDF_PATH=/home/edgie/esp/esp-idf -D "SERIAL_TOOL=/home/edgie/.espressif/python_env/idf5.1_py3.10_env/bin/python;;/home/edgie/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s2" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/edgie/eclipse-workspace/usb_hid_test/build -P /home/edgie/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+ninja: build stopped: subcommand failed.
