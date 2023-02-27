@@ -10,4 +10,6 @@ Dont mind the name of the main file...
 
 ---
 
+### Breathing effect
+
 ![Breathing](./assets/ezgif.com-video-to-gif.gif)
