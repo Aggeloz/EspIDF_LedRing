@@ -24,3 +24,7 @@ Im hoping to create an HID(Or generic USB) device to be able to control differen
 ### Loading Loop Animation
 
 ![Breathing](./assets/ezgif.com-video-to-gif%20(2).gif)
+
+### Loop And Back Animation
+
+![Breathing](./assets/ezgif.com-video-to-gif%20(3).gif)
