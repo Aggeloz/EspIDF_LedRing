@@ -78,7 +78,6 @@ void app_main(void)
             led_strip_set_pixel(led_strip, 7, i * 10, 0, i * 10);
             vTaskDelay(50 / portTICK_PERIOD_MS);
         }
-        // vTaskDelay(1000 / portTICK_PERIOD_MS);
         for (i = 25; i > 0; i--)
         {
             ESP_LOGI(TAG, "Down %d", i);
@@ -96,7 +95,5 @@ void app_main(void)
         }
         
 
-        ESP_LOGI(TAG, "Turning the LED");
-        // vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
