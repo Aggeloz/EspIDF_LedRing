@@ -19,3 +19,8 @@ Im hoping to create an HID(Or generic USB) device to be able to control differen
 ### Bounce Animation
 
 ![Breathing](./assets/ezgif.com-video-to-gif%20(1).gif)
+
+
+### Loading Loop Animation
+
+![Breathing](./assets/ezgif.com-video-to-gif%20(2).gif)

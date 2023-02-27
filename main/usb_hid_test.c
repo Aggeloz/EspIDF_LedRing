@@ -5,6 +5,7 @@
 #include "esp_log.h"
 #include "sdkconfig.h"
 #include "led_strip.h"
+// #include "tinyusb.h"
 
 static const char *TAG = "BlackBox";
 #define BLINK_GPIO GPIO_NUM_1
@@ -37,24 +38,22 @@ void app_main(void)
     {
 
         // Bounce animation -> from 0 to max
-        for (i = 0; i < strip_config.max_leds; i++)
-        {
-            led_strip_refresh(led_strip);
-            led_strip_set_pixel(led_strip, i, 25, 0, 25);
- 
+        // for (i = 0; i < strip_config.max_leds; i++)
+        // {
+        //     led_strip_refresh(led_strip);
+        //     led_strip_set_pixel(led_strip, i, 25, 0, 25);
 
-            vTaskDelay(100 / portTICK_PERIOD_MS);
-        }
+        //     vTaskDelay(100 / portTICK_PERIOD_MS);
+        // }
 
-        for (i = strip_config.max_leds; i >= 0; i--)
-        {
-            led_strip_refresh(led_strip);
-            led_strip_set_pixel(led_strip, i, 0, 0, 0);
-            vTaskDelay(100 / portTICK_PERIOD_MS);
-        }
-        
+        // for (i = strip_config.max_leds; i >= 0; i--)
+        // {
+        //     led_strip_refresh(led_strip);
+        //     led_strip_set_pixel(led_strip, i, 0, 0, 0);
+        //     vTaskDelay(100 / portTICK_PERIOD_MS);
+        // }
 
-
+        // -----------------------------------------------
 
         // Breathing animation
         // for (i = 1; i < 10; i++)
@@ -66,8 +65,7 @@ void app_main(void)
         //     {
         //         led_strip_set_pixel(led_strip, j, i * 10, 0, i * 10);
         //     }
-            
-    
+
         //     vTaskDelay(50 / portTICK_PERIOD_MS);
         // }
         // for (i = 9; i > 0; i--)
@@ -82,7 +80,22 @@ void app_main(void)
 
         //     vTaskDelay(50 / portTICK_PERIOD_MS);
         // }
-        
 
+        // -----------------------------------------------
+
+
+        // Loading loop animation
+        for (i = 0; i <= strip_config.max_leds; i++)
+        {
+            vTaskDelay(50 / portTICK_PERIOD_MS);
+            led_strip_refresh(led_strip);
+            led_strip_set_pixel(led_strip, i, 10, 0, 10);
+            if (i>= 1)
+            {
+                led_strip_set_pixel(led_strip, i-1, 0, 0, 0);
+            }
+            
+        }
+        // vTaskDelay(50 / portTICK_PERIOD_MS);
     }
 }
