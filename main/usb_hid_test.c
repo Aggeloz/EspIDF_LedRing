@@ -40,7 +40,7 @@ void app_main(void)
         for (i = 0; i < strip_config.max_leds; i++)
         {
             led_strip_refresh(led_strip);
-            led_strip_set_pixel(led_strip, i, 50, 0, 50);
+            led_strip_set_pixel(led_strip, i, 25, 0, 25);
  
 
             vTaskDelay(100 / portTICK_PERIOD_MS);
