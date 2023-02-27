@@ -36,29 +36,23 @@ void app_main(void)
     while (1)
     {
 
-        // Bounce animation
-        for (i = 8; i > 0; i--)
+        // Bounce animation -> from 0 to max
+        for (i = 0; i < strip_config.max_leds; i++)
         {
             led_strip_refresh(led_strip);
-            led_strip_set_pixel(led_strip, i, 100, 0, 100);
-            if (i >= 1)
-            {
-                led_strip_set_pixel(led_strip, i - 1, 0, 0, 0);
-            }
+            led_strip_set_pixel(led_strip, i, 50, 0, 50);
+ 
 
             vTaskDelay(100 / portTICK_PERIOD_MS);
         }
-        for (i = 0; i <= strip_config.max_leds; i++)
+
+        for (i = strip_config.max_leds; i >= 0; i--)
         {
             led_strip_refresh(led_strip);
-            led_strip_set_pixel(led_strip, i, 100, 0, 100);
-            if (i >= 1)
-            {
-                led_strip_set_pixel(led_strip, i - 1, 0, 0, 0);
-            }
-
+            led_strip_set_pixel(led_strip, i, 0, 0, 0);
             vTaskDelay(100 / portTICK_PERIOD_MS);
         }
+        
 
 
 
