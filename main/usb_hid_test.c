@@ -68,14 +68,12 @@ void app_main(void)
             ESP_LOGI(TAG, "Up %d", i);
             led_strip_refresh(led_strip);
 
-            led_strip_set_pixel(led_strip, 0, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 1, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 2, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 3, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 4, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 5, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 6, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 7, i * 10, 0, i * 10);
+            for (size_t j = 0; j < strip_config.max_leds; j++)
+            {
+                led_strip_set_pixel(led_strip, j, i * 10, 0, i * 10);
+            }
+            
+    
             vTaskDelay(50 / portTICK_PERIOD_MS);
         }
         for (i = 25; i > 0; i--)
@@ -83,14 +81,11 @@ void app_main(void)
             ESP_LOGI(TAG, "Down %d", i);
             led_strip_refresh(led_strip);
 
-            led_strip_set_pixel(led_strip, 0, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 1, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 2, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 3, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 4, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 5, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 6, i * 10, 0, i * 10);
-            led_strip_set_pixel(led_strip, 7, i * 10, 0, i * 10);
+            for (size_t j = 0; j < strip_config.max_leds; j++)
+            {
+                led_strip_set_pixel(led_strip, j, i * 10, 0, i * 10);
+            }
+
             vTaskDelay(50 / portTICK_PERIOD_MS);
         }
         
