@@ -13,6 +13,7 @@ led_strip_handle_t led_strip;
 
 void app_main(void)
 {
+    int i;
 
     /* LED strip initialization with the GPIO and pixels number*/
     led_strip_config_t strip_config = {
@@ -35,28 +36,65 @@ void app_main(void)
     while (1)
     {
 
-        for (size_t i = 8; i > 0; i--)
+        // Clock animation
+        // for (i = 8; i > 0; i--)
+        // {
+        //     led_strip_refresh(led_strip);
+        //     led_strip_set_pixel(led_strip, i, 100, 0, 100);
+        //     if (i >= 1)
+        //     {
+        //         led_strip_set_pixel(led_strip, i - 1, 0, 0, 0);
+        //     }
+
+        //     vTaskDelay(100 / portTICK_PERIOD_MS);
+        // }
+        // for (i = 0; i <= strip_config.max_leds; i++)
+        // {
+        //     led_strip_refresh(led_strip);
+        //     led_strip_set_pixel(led_strip, i, 100, 0, 100);
+        //     if (i >= 1)
+        //     {
+        //         led_strip_set_pixel(led_strip, i - 1, 0, 0, 0);
+        //     }
+
+        //     vTaskDelay(100 / portTICK_PERIOD_MS);
+        // }
+
+
+
+        // Breathing animation
+        for (i = 1; i < 26; i++)
         {
+            ESP_LOGI(TAG, "Up %d", i);
             led_strip_refresh(led_strip);
-            led_strip_set_pixel(led_strip, i, 100, 0, 0);
-            if (i>=1)
-            {
-            led_strip_set_pixel(led_strip, i-1, 0, 0, 0);
-            }
-            
-            vTaskDelay(100 / portTICK_PERIOD_MS);
+
+            led_strip_set_pixel(led_strip, 0, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 1, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 2, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 3, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 4, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 5, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 6, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 7, i * 10, 0, i * 10);
+            vTaskDelay(50 / portTICK_PERIOD_MS);
         }
-        for (size_t i = 0; i <= strip_config.max_leds; i++)
+        // vTaskDelay(1000 / portTICK_PERIOD_MS);
+        for (i = 25; i > 0; i--)
         {
+            ESP_LOGI(TAG, "Down %d", i);
             led_strip_refresh(led_strip);
-            led_strip_set_pixel(led_strip, i, 100, 0, 0);
-            if (i>=1)
-            {
-            led_strip_set_pixel(led_strip, i-1, 0, 0, 0);
-            }
-            
-            vTaskDelay(100 / portTICK_PERIOD_MS);
+
+            led_strip_set_pixel(led_strip, 0, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 1, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 2, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 3, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 4, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 5, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 6, i * 10, 0, i * 10);
+            led_strip_set_pixel(led_strip, 7, i * 10, 0, i * 10);
+            vTaskDelay(50 / portTICK_PERIOD_MS);
         }
+        
 
         ESP_LOGI(TAG, "Turning the LED");
         // vTaskDelay(1000 / portTICK_PERIOD_MS);
