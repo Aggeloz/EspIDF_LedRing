@@ -37,7 +37,6 @@ void app_main(void)
     };
     ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
 
-    /* Configure the peripheral according to the LED type */
 
     while (1)
     {
@@ -75,7 +74,7 @@ void breathing(led_strip_config_t strip_config)
     // Breathing animation
     for (i = 1; i < 10; i++)
     {
-        ESP_LOGI(TAG, "Up %d", i);
+        // ESP_LOGI(TAG, "Up %d", i);
         led_strip_refresh(led_strip);
 
         for (size_t j = 0; j < strip_config.max_leds; j++)
@@ -87,7 +86,7 @@ void breathing(led_strip_config_t strip_config)
     }
     for (i = 9; i > 0; i--)
     {
-        ESP_LOGI(TAG, "Down %d", i);
+        // ESP_LOGI(TAG, "Down %d", i);
         led_strip_refresh(led_strip);
 
         for (size_t j = 0; j < strip_config.max_leds; j++)
